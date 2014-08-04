@@ -403,7 +403,7 @@ h1, .h1 {
 }
 
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {
+@media only screen and (max-width : 321px) {
 	.container {
 		width:300px;
 		height:200px;
@@ -411,14 +411,20 @@ h1, .h1 {
 			&.clock-container{
 				line-height:198px;
 				p {
-					font-size:60px;
+					font-size:50px;
 				}
 			}
 			&.alarm-container {
 				.btn-menu {
 					padding: 0px;
-					font-size: 9px;
+					font-size: 8px;
 					line-height: 35px;
+				}
+				.alarm-form .form-control.btn-add {
+					font-size: 9px;
+					padding: 0px;
+					font-weight: normal;
+					line-height:20px;					
 				}
 				.alarms {
 					li {
@@ -427,14 +433,15 @@ h1, .h1 {
 							&.btn-switch {
 								padding: 3px 6px;
 								i {
-									font-size: 11px;
+									font-size: 10px;
 									&:after {
 										border-width:1px;
 									}
 								}
 							}
 							&.btn-time {
-								font-size: 13px;
+								font-size: 11px;
+								padding:2px 4px;
 							}
 						}
 					}

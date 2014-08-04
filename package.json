@@ -1,0 +1,19 @@
+{
+  "name": "Clock-with-alarm!",
+  "version": "0.0.1",
+  "description": "Clock-with-alarm app",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.7.2",
+    "express.io": "^1.1.13",
+	"static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "socket.io": "^1.0.6"
+  }
+}

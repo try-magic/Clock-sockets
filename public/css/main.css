@@ -522,6 +522,10 @@ h1,
     width: 360px;
     height: 240px;
   }
+  .modal .msg {
+    margin-top: 55px;
+    font-size: 14px;
+  }
 }
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) {
@@ -535,11 +539,22 @@ h1,
   .container > li.clock-container p {
     font-size: 60px;
   }
+  .container > li.alarm-container .btn-menu {
+    padding: 0px;
+    font-size: 9px;
+    line-height: 35px;
+  }
   .container > li.alarm-container .alarms li a {
     line-height: normal;
   }
+  .container > li.alarm-container .alarms li a.btn-switch {
+    padding: 3px 6px;
+  }
   .container > li.alarm-container .alarms li a.btn-switch i {
     font-size: 11px;
+  }
+  .container > li.alarm-container .alarms li a.btn-switch i:after {
+    border-width: 1px;
   }
   .container > li.alarm-container .alarms li a.btn-time {
     font-size: 13px;
@@ -547,6 +562,10 @@ h1,
   .modal {
     width: 360px;
     height: 240px;
+  }
+  .modal .msg {
+    margin-top: 55px;
+    font-size: 14px;
   }
 }
 /* Smartphones (portrait) ----------- */
@@ -561,18 +580,33 @@ h1,
   .container > li.clock-container p {
     font-size: 60px;
   }
+  .container > li.alarm-container .btn-menu {
+    padding: 0px;
+    font-size: 9px;
+    line-height: 35px;
+  }
   .container > li.alarm-container .alarms li a {
     line-height: normal;
   }
+  .container > li.alarm-container .alarms li a.btn-switch {
+    padding: 3px 6px;
+  }
   .container > li.alarm-container .alarms li a.btn-switch i {
-    font-size: 10px;
+    font-size: 11px;
+  }
+  .container > li.alarm-container .alarms li a.btn-switch i:after {
+    border-width: 1px;
   }
   .container > li.alarm-container .alarms li a.btn-time {
-    font-size: 14px;
+    font-size: 13px;
   }
   .modal {
     width: 300px;
     height: 200px;
+  }
+  .modal .msg {
+    margin-top: 55px;
+    font-size: 14px;
   }
 }
 /* Large screens ----------- */
@@ -599,6 +633,7 @@ h1,
   }
   .container > li.alarm-container .alarms li a.btn-time {
     font-size: 24px;
+    text-align: center;
   }
   .modal {
     width: 900px;

@@ -1,4 +1,3 @@
-
 var socket = io();
 
 socket.on('add', function(obj){

@@ -638,6 +638,9 @@ h1,
   .container > li.alarm-container .alarms li a.btn-switch i {
     font-size: 16px;
   }
+  .container > li.alarm-container .alarms li a.btn-switch i:after {
+    border-width: 2px;
+  }
   .container > li.alarm-container .alarms li a.btn-time {
     font-size: 24px;
     text-align: center;

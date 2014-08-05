@@ -6,10 +6,7 @@
 	<title>Clock with alarm!</title>
 	<link rel="stylesheet" href="/css/main.css" type="text/css">
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="/js/data.js"></script>
-	<script src="/socket.io/socket.io.js"></script>
-	<script type="text/javascript" src="/js/socket.js"></script>
-	<script type="text/javascript" src="/js/script.js" defer></script>
+	<script src="/socket.io/socket.io.js"></script>	
 </head>
 <body>
 	<div class="app-wrapper">
@@ -23,7 +20,7 @@
 			</li>
 			<li class="alarm-container">
 				<span class="btn btn-primary btn-menu"><i class="icon-menu"></i>Add new alarm!</span>
-				<form action="/" method="post" name="add-alarm" id="addForm" class="hide alarm-form">
+				<form action="/" method="post" name="addAlarmForm" id="addAlarmForm" class="hide alarm-form">
 					<input name="time" type="time" class="form-control input-time pull-left">
 					<button type="submit" class="form-control btn btn-xs btn-add pull-right">Add!</button>
 				</form>
@@ -38,5 +35,7 @@
 		<p class="msg">To turn off this hell, please, click button below!</p>
 		<span id="turnOff" class="btn btn-xs btn-success">Turn off!</span>
 	</div>
+	<script type="text/javascript" src="/js/app.js"></script>
+	<script type="text/javascript" src="/js/handlers.js"></script>
 </body>
 </html>

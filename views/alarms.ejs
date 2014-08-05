@@ -4,8 +4,8 @@
 	<%if(alarms[i].status) {%>
 		<a class="pull-left btn btn-primary btn-switch on"><i class="icon-clock"></i></a>
 	<%} else {%>
-		<a class="pull-left btn btn-primary btn-switch off"><i class="icon-clock"></i></a>
+		<a class="pull-left btn btn-primary btn-switch"><i class="icon-clock"></i></a>
 	<%}%>
-	<a class="pull-left btn btn-primary btn-time"><span><%= alarms[i].time%></span></a>
+	<a class="pull-left btn btn-primary btn-delete"><span><%= alarms[i].time%></span></a>
 </li>
 <%}%>

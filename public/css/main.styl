@@ -107,10 +107,10 @@ h1, .h1 {
 	&.btn-primary {
 		color: #ffffff;
 		background-color: $brand-primary;
-		border-color: darken($brand-primary, 5%);
+		border-color: darken($brand-primary, 20%);
 		&:hover {
-			background-color: darken($brand-primary, 15%);
-			border-color: darken($brand-primary, 20%);
+			background-color: darken($brand-primary, 25%);
+			border-color: darken($brand-primary, 30%);
 		}
 	}
 	&.btn-add {
@@ -187,21 +187,22 @@ h1, .h1 {
 					display:none;
 				}
 				.form-control {
-					width:50%;
 					height:24px;
-					border-radius:4px;
 					font-size:12px;
 					font-weight:bold;
 					box-sizing:border-box;
 					&.input-time {
+						width:70%;
 						padding: 3px 0px 3px 5px;
 						color:#030303;
 						border:0px;
+						border-radius: 4px 0px 0px 4px;
 						box-shadow:inset 1px 1px 2px rgba(0,0,0,0.8);
 					}
 					&.btn-add {
-						width:40%;
+						width:30%;
 						line-height:22px;
+						border-radius:0px 4px 4px 0px;
 					}
 					
 				}
@@ -211,12 +212,20 @@ h1, .h1 {
 				overflow-y: scroll;
 				margin-right: -20px;
 				transition: all .3s ease;
+				&.short {
+					height:$primary-height*0.85 - 40px;
+					li a {
+						box-sizing:border-box;
+						height: 100%;
+						line-height: ($primary-height*0.85 - 40)*0.14 - 14px;
+					}
+				}
 				li {
 					height:14%;
 					a {
 						box-sizing:border-box;
 						height: 100%;
-						line-height: 35px;
+						line-height: ($primary-height*0.85)*0.14 - 14px;
 						&.btn-switch {
 							width: 30%;
 							text-align: center;
@@ -244,7 +253,7 @@ h1, .h1 {
 								}
 							}
 						}
-						&.btn-time {
+						&.btn-delete {
 							width: 70%;
 							text-align: left;
 							border-left: 1px solid #181818;
@@ -309,71 +318,30 @@ h1, .h1 {
 		height:240px;
 		> li{
 			&.clock-container{
+				width:60%;
 				line-height:238px;
 				p {
-					font-size:60px;
+					font-size:40px;
 				}
 			}
 			&.alarm-container {
+				width:40%;
 				.btn-menu {
 					padding: 0px;
 					font-size: 9px;
 					line-height: 35px;
 				}
 				.alarms {
-					li {
-						a{
-							line-height:normal;
-							&.btn-switch {
-								padding: 3px 6px;
-								i {
-									font-size: 11px;
-									&:after {
-										border-width:1px;
-									}
-								}
-							}
-							&.btn-time {
-								font-size: 13px;
-							}
+					&.short {
+						height:240px*0.85 - 40px;
+						li a {
+							line-height: (240px*0.85 - 40)*0.2 - 14px;
 						}
 					}
-				}
-			}
-		}
-	}
-	.modal {
-		width:360px;
-		height:240px;
-		.msg {
-			margin-top: 55px;
-			font-size: 14px;
-		}
-	}
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
-	.container {
-		width:360px;
-		height:240px;
-		> li{
-			&.clock-container{
-				line-height:238px;
-				p {
-					font-size:60px;
-				}
-			}
-			&.alarm-container {
-				.btn-menu {
-					padding: 0px;
-					font-size: 9px;
-					line-height: 35px;
-				}
-				.alarms {
 					li {
+						height:20%;
 						a{
-							line-height:normal;
+							line-height: 240px*0.85*0.2 - 14px;
 							&.btn-switch {
 								padding: 3px 6px;
 								i {
@@ -383,7 +351,7 @@ h1, .h1 {
 									}
 								}
 							}
-							&.btn-time {
+							&.btn-delete {
 								font-size: 13px;
 							}
 						}
@@ -403,7 +371,7 @@ h1, .h1 {
 }
 
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 321px) {
+@media only screen and (max-width : 320px) {
 	.container {
 		width:300px;
 		height:200px;
@@ -411,7 +379,7 @@ h1, .h1 {
 			&.clock-container{
 				line-height:198px;
 				p {
-					font-size:50px;
+					font-size:40px;
 				}
 			}
 			&.alarm-container {
@@ -427,9 +395,16 @@ h1, .h1 {
 					line-height:20px;					
 				}
 				.alarms {
+					&.short {
+						height:200px*0.85 - 40px;
+						li a {
+							line-height: (200px*0.85 - 40)*0.2 - 14px;
+						}
+					}
 					li {
+						height:20%;
 						a{
-							line-height:normal;
+							line-height: (200px*0.85)*0.2 - 14px;
 							&.btn-switch {
 								padding: 3px 6px;
 								i {
@@ -439,7 +414,7 @@ h1, .h1 {
 									}
 								}
 							}
-							&.btn-time {
+							&.btn-delete {
 								font-size: 11px;
 								padding:2px 4px;
 							}
@@ -477,17 +452,30 @@ h1, .h1 {
 					line-height: 75px;
 					font-size: 20px;
 				}
+				.alarm-form {
+					.form-control {
+						height:30px;
+					}
+				}
 				.alarms {
+					&.short {
+						height:600px*0.85 - 40px;
+						li a {
+							box-sizing:border-box;
+							height: 100%;
+							line-height: (600px*0.85 - 40)*0.14 - 14px;
+						}
+					}
 					li {
 						a{
-							line-height:50px;
+							line-height: (600px*0.85 - 40)*0.14 - 2px;
 							&.btn-switch i {
 								font-size: 16px;
 								&:after {
 									border-width:2px;
 								}
 							}
-							&.btn-time {
+							&.btn-delete {
 								font-size: 24px;
 								text-align:center;
 							}

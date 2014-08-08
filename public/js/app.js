@@ -27,14 +27,14 @@ var socket = io();
  * $popup - popup container.
  * $clock - container for clock.
 */
-var $btnMenu = $('.btn-menu'),
-	$addAlarmForm = $('#addAlarmForm'),
-	$alarmsList = $('#alarms'),
-	$audio = $('audio')[0],
-	$btnTurnOff = $('#turnOff'),
-	$overlay = $('.overlay'),
-	$popup = $('.modal');
-	$clock = $('.clock');
+var $btnMenu = $(document.querySelector('.btn-menu')),
+	$addAlarmForm = $(document.querySelector('#addAlarmForm')),
+	$alarmsList = $(document.querySelector('#alarms')),
+	$audio = document.querySelector('audio'),
+	$btnTurnOff = $(document.querySelector('#turnOff')),
+	$overlay = $(document.querySelector('.overlay')),
+	$popup = $(document.querySelector('.modal'));
+	$clock = $(document.querySelector('.clock'));
 
 /** 
  * Function, that init clock and watching for alarms.
@@ -56,32 +56,19 @@ function init() {
 	
 }
 
-/** 
- * Function, that make ajax request to get initial data and start function init().
+/**
+ * Socket that recive inial data from server and then start app.
+ * @param {Array} - Keep array of existed alarms.
 */
-function loadData() {
+socket.on('connection', function(obj){
 
-	$.ajax({
-		url: '/data',
-		type: 'get',
-		complete: function(res, status) {
-			if(status === 'success') {
-				alarmsData = res.responseJSON;
-				mainInterval = setInterval(function () {
-					init();
-				}, 200);
-			} else {
-				console.log(status);
-			}
-		}
-	});
+	alarmsData = obj;
+	mainInterval = setInterval(function () {
+		init();
+	}, 200);
 	
-}
+});
 
-/** 
- * Start app.
-*/
-loadData();
 
 /**
  * Socket for adding new alarm.
@@ -108,7 +95,7 @@ socket.on('turnoff', function(obj){
 	alarmsData = obj.alarms;
 	$('.btn-switch').eq(obj.index).toggleClass('on');
 	$audio.pause();
-	$audio.curentTime = 0;
+	$audio.currentTime = 0;
 	
 	mainInterval = setInterval(function() {
 		init();

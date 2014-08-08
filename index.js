@@ -23,7 +23,7 @@ app.use('/', routes);
 
 
 io.on('connection', function(socket){
-
+	socket.emit('connection', alarms);
 	socket.on('add', function(obj){
 
 		alarms.push({

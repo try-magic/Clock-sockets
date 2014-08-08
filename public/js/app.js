@@ -60,9 +60,9 @@ function init() {
  * Socket that recive inial data from server and then start app.
  * @param {Array} - Keep array of existed alarms.
 */
-socket.on('connection', function(obj){
+socket.on('connection', function(arr){
 
-	alarmsData = obj;
+	alarmsData = arr;
 	mainInterval = setInterval(function () {
 		init();
 	}, 200);
